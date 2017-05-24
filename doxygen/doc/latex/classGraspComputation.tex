@@ -1,0 +1,1143 @@
+\section{Grasp\+Computation Class Reference}
+\label{classGraspComputation}\index{Grasp\+Computation@{Grasp\+Computation}}
+
+
+This class computes the grasping pose for grasping and object once the superquadric modeling the object is provided.  
+
+
+
+
+{\ttfamily \#include $<$grasp\+Computation.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries Grasp\+Computation} (const yarp\+::os\+::\+Property \&\+\_\+ipopt\+\_\+par, const yarp\+::os\+::\+Property \&\+\_\+pose\+\_\+par, const yarp\+::os\+::\+Property \&\+\_\+trajectory\+\_\+par, const std\+::string \&\+\_\+left\+\_\+or\+\_\+right, yarp\+::sig\+::\+Vector \&\+\_\+hand, yarp\+::sig\+::\+Vector \&\+\_\+hand1, yarp\+::os\+::\+Resource\+Finder $\ast$\+\_\+rf, yarp\+::os\+::\+Property \&\+\_\+complete\+\_\+sol, const yarp\+::sig\+::\+Vector \&\+\_\+object, double \&\+\_\+quality\+\_\+right, double \&\+\_\+quality\+\_\+left)\label{classGraspComputation_a8568147ac89fff96794d84139eb16aa3}
+
+\item 
+void \hyperlink{classGraspComputation_a3ae446a26b1620933e071d3a538d742f}{set\+Ipopt\+Par} (const yarp\+::os\+::\+Property \&new\+Options, bool first\+\_\+time)
+\begin{DoxyCompactList}\small\item\em Set parameters for computing the solution with ipopt. \end{DoxyCompactList}\item 
+yarp\+::os\+::\+Property \hyperlink{classGraspComputation_afbad1962376bdf24b9376cf2c82e0e49}{get\+Ipopt\+Par} ()
+\begin{DoxyCompactList}\small\item\em Get parameters used for computing the solution with ipopt. \end{DoxyCompactList}\item 
+void \hyperlink{classGraspComputation_a76018ae7258adff6b2efa029fdf6f5dc}{set\+Pose\+Par} (const yarp\+::os\+::\+Property \&new\+Options, bool first\+\_\+time)
+\begin{DoxyCompactList}\small\item\em Set parameters for correctly compute the grasping pose. \end{DoxyCompactList}\item 
+yarp\+::os\+::\+Property \hyperlink{classGraspComputation_a55cdd807a70b178acc14e1a923ea2feb}{get\+Pose\+Par} ()
+\begin{DoxyCompactList}\small\item\em Get parameters for correctly compute the grasping pose. \end{DoxyCompactList}\item 
+void \hyperlink{classGraspComputation_a119b778fee99e973e0e9938ba90398a7}{set\+Trajectory\+Par} (const yarp\+::os\+::\+Property \&new\+Options, bool first\+\_\+time)
+\begin{DoxyCompactList}\small\item\em Set parameters for correctly compute the trajectory for approaching the desired pose. \end{DoxyCompactList}\item 
+yarp\+::os\+::\+Property \hyperlink{classGraspComputation_a9ec71cbbd2fe6165ed4b6d866d78d6be}{get\+Trajectory\+Par} ()
+\begin{DoxyCompactList}\small\item\em Get parameters used for correctly compute the trajectory for approaching the desired pose. \end{DoxyCompactList}\item 
+bool \hyperlink{classGraspComputation_ad8ea3d70e50ff4f4dbda6b03bcef77fa}{init} ()
+\begin{DoxyCompactList}\small\item\em Init function. \end{DoxyCompactList}\item 
+void \hyperlink{classGraspComputation_a6a63b1c79c125772f30eb5f82b8437ea}{run} ()\label{classGraspComputation_a6a63b1c79c125772f30eb5f82b8437ea}
+
+\begin{DoxyCompactList}\small\item\em Run function. \end{DoxyCompactList}\item 
+bool \hyperlink{classGraspComputation_a28e28e973bd9af1d96bfa7548dc1c029}{compute\+Pose} (yarp\+::sig\+::\+Vector \&\hyperlink{classGraspComputation_a180a48b0a2d730ba28545a18d9f0f7fc}{hand}, const std\+::string \&left\+\_\+or\+\_\+right)
+\begin{DoxyCompactList}\small\item\em Compute a given pose for the selected hand. \end{DoxyCompactList}\item 
+bool \hyperlink{classGraspComputation_ab68ef4347c7efa9540ab68ff5abf0254}{compute\+Trajectory} (const std\+::string \&chosen\+\_\+hand, const std\+::string \&direction)
+\begin{DoxyCompactList}\small\item\em Compute the trajectory for the selected hand. \end{DoxyCompactList}\item 
+void \hyperlink{classGraspComputation_a49b0efdf7da5147e987cbf05be135e2f}{get\+Solution} (const std\+::string \&\hyperlink{classGraspComputation_a180a48b0a2d730ba28545a18d9f0f7fc}{hand})
+\begin{DoxyCompactList}\small\item\em Extract the solution from ipopt interface. \end{DoxyCompactList}\item 
+double \hyperlink{classGraspComputation_a75fcb98c9e15f9aac14ea429f625e662}{get\+Time} ()
+\begin{DoxyCompactList}\small\item\em Return computation time for getting the pose. \end{DoxyCompactList}\item 
+yarp\+::os\+::\+Property \hyperlink{classGraspComputation_a82ff5a0626b48c45d2fc223ecd16d581}{fill\+Property} (const std\+::string \&\hyperlink{classGraspComputation_a180a48b0a2d730ba28545a18d9f0f7fc}{hand})
+\begin{DoxyCompactList}\small\item\em Properly fill a property with the computed solution. \end{DoxyCompactList}\item 
+void \hyperlink{classGraspComputation_a5a28918e89faff29fce361c7b5efb58f}{set\+Par} (const std\+::string \&tag, const std\+::string \&value)
+\begin{DoxyCompactList}\small\item\em Set a a parameter equal to a value. \end{DoxyCompactList}\item 
+void {\bfseries best\+Pose} ()\label{classGraspComputation_ac5d65db1eac887de3513e7e4558cb712}
+
+\end{DoxyCompactItemize}
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+yarp\+::sig\+::\+Vector \& \hyperlink{classGraspComputation_a180a48b0a2d730ba28545a18d9f0f7fc}{hand}\label{classGraspComputation_a180a48b0a2d730ba28545a18d9f0f7fc}
+
+\begin{DoxyCompactList}\small\item\em Vector for representing one hand ellipsoid. \end{DoxyCompactList}\item 
+yarp\+::sig\+::\+Vector \& \hyperlink{classGraspComputation_a8577b68dddb60360dc5ecd1b87440297}{hand1}\label{classGraspComputation_a8577b68dddb60360dc5ecd1b87440297}
+
+\begin{DoxyCompactList}\small\item\em Vector for representing one hand ellipsoid. \end{DoxyCompactList}\item 
+yarp\+::os\+::\+Property \& \hyperlink{classGraspComputation_a2a53b7cb2bd19461860d41953bf92c59}{complete\+\_\+sol}\label{classGraspComputation_a2a53b7cb2bd19461860d41953bf92c59}
+
+\begin{DoxyCompactList}\small\item\em Complete solution computed. \end{DoxyCompactList}\item 
+const yarp\+::sig\+::\+Vector \& \hyperlink{classGraspComputation_a191eeabb17147b0d091332008fc923c8}{object}\label{classGraspComputation_a191eeabb17147b0d091332008fc923c8}
+
+\begin{DoxyCompactList}\small\item\em Object superquadric. \end{DoxyCompactList}\item 
+int {\bfseries count\+\_\+file\+\_\+old}\label{classGraspComputation_a7c13a764201910023cd0ca2800224f4a}
+
+\item 
+int {\bfseries count\+\_\+file}\label{classGraspComputation_ad811834d2f0289c1413f0c549205c2f9}
+
+\item 
+std\+::string {\bfseries best\+\_\+hand}\label{classGraspComputation_a429ee80f2e9aa3717cf4566cc638b0da}
+
+\item 
+double {\bfseries final\+\_\+value\+\_\+R}\label{classGraspComputation_a7e6cc9e8ace1461121684bcf4c58e3b2}
+
+\item 
+double {\bfseries final\+\_\+value\+\_\+L}\label{classGraspComputation_a1a54cde3bbdd7d348f70b3e5ccfaf563}
+
+\item 
+double {\bfseries cos\+\_\+zr}\label{classGraspComputation_ac4b645e6f6d6518e933dde2a1c71b126}
+
+\item 
+double {\bfseries cos\+\_\+zl}\label{classGraspComputation_ad6f8257369925e1676f53949717d37d6}
+
+\item 
+double \& {\bfseries quality\+\_\+right}\label{classGraspComputation_a6977630d0dd9437634e22a3b7d71f126}
+
+\item 
+double \& {\bfseries quality\+\_\+left}\label{classGraspComputation_a2915a3ce383d80587f61a06604b2cbcd}
+
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string {\bfseries left\+\_\+right}\label{classGraspComputation_a7405e0cd57ad3c0ec2757c0d1e6e791a}
+
+\item 
+std\+::deque$<$ yarp\+::sig\+::\+Vector $>$ {\bfseries trajectory\+\_\+right}\label{classGraspComputation_ad34b98bdd805de7bbbb92204524fb738}
+
+\item 
+std\+::deque$<$ yarp\+::sig\+::\+Vector $>$ {\bfseries trajectory\+\_\+left}\label{classGraspComputation_a72729f4e74e28f866121da7ec56645ee}
+
+\item 
+yarp\+::sig\+::\+Vector {\bfseries poseR}\label{classGraspComputation_accdb354cf67e5ea2c2189f33bfd2e802}
+
+\item 
+yarp\+::sig\+::\+Vector {\bfseries solR}\label{classGraspComputation_aa8c946727c392c140be73ac1c5e83eb2}
+
+\item 
+yarp\+::sig\+::\+Vector {\bfseries poseL}\label{classGraspComputation_a7a265ee7cb25e2617108e7128ae0cce5}
+
+\item 
+yarp\+::sig\+::\+Vector {\bfseries solL}\label{classGraspComputation_a0b1a5422bfc7eb04976a8cf4f3a63ed4}
+
+\item 
+double {\bfseries tol}\label{classGraspComputation_abeab81e105369cb96aa81154dd6deced}
+
+\item 
+double {\bfseries constr\+\_\+viol\+\_\+tol}\label{classGraspComputation_a19511014ec2f0e0e91a4d63dc666955b}
+
+\item 
+int {\bfseries max\+\_\+iter}\label{classGraspComputation_ab41a54f337bcd46ecdee9b40a0c964c8}
+
+\item 
+int {\bfseries acceptable\+\_\+iter}\label{classGraspComputation_a1c8f00915603a90bd1bb405ea9d49ebd}
+
+\item 
+int {\bfseries object\+\_\+provided}\label{classGraspComputation_adf5c4faf99e9e11cdaf8965fb7da91c4}
+
+\item 
+std\+::string {\bfseries mu\+\_\+strategy}\label{classGraspComputation_ac45140965ecbdce979e455f3e3de7211}
+
+\item 
+std\+::string {\bfseries nlp\+\_\+scaling\+\_\+method}\label{classGraspComputation_a6cf999d26066780519a0f6086b5117aa}
+
+\item 
+double {\bfseries max\+\_\+cpu\+\_\+time}\label{classGraspComputation_a8a4ee0afa3541485daa338dd25baaa5c}
+
+\item 
+int {\bfseries n\+\_\+pointshand}\label{classGraspComputation_afa3a569ce96b4cb1a13020537646ab5a}
+
+\item 
+double {\bfseries distance}\label{classGraspComputation_a0c1bd5e871dfddb9968508fe9bda792c}
+
+\item 
+double {\bfseries distance1}\label{classGraspComputation_a268253bf8a04a0b05fcb4b02b4af0fbe}
+
+\item 
+std\+::string {\bfseries dir}\label{classGraspComputation_a362c9280e813cfcbb1b0b4153fabc88c}
+
+\item 
+yarp\+::sig\+::\+Vector {\bfseries displacement}\label{classGraspComputation_a8cc4909b0e1fa249df366926b91bae74}
+
+\item 
+yarp\+::sig\+::\+Vector {\bfseries plane}\label{classGraspComputation_ae2f9c475883f512cb132479ee7896a24}
+
+\item 
+yarp\+::os\+::\+Property {\bfseries ipopt\+\_\+par}\label{classGraspComputation_a616f3c17653d2e4d500ce7dbf9849917}
+
+\item 
+yarp\+::os\+::\+Property {\bfseries pose\+\_\+par}\label{classGraspComputation_a8903e5f9411e6a064d767b4c75c7f3bd}
+
+\item 
+yarp\+::os\+::\+Property {\bfseries trajectory\+\_\+par}\label{classGraspComputation_a72510e6516dab20c66c39e6eae157f3c}
+
+\item 
+bool {\bfseries go\+\_\+on}\label{classGraspComputation_a309d4de6f3b04be27ab83e4b32213431}
+
+\item 
+double {\bfseries t0}\label{classGraspComputation_a5abf6bd76a8b1a5aee7a49b8ef16a6ac}
+
+\item 
+double {\bfseries t\+\_\+grasp}\label{classGraspComputation_a5f5784795d8897981205e4f8e56fe94b}
+
+\item 
+yarp\+::os\+::\+Mutex {\bfseries mutex}\label{classGraspComputation_a90ceee41cc255a3e818728228910fec8}
+
+\item 
+yarp\+::os\+::\+Resource\+Finder $\ast$ {\bfseries rf}\label{classGraspComputation_a0e0cb4d1a5c490b3da70c2221cb4dd5a}
+
+\item 
+int {\bfseries print\+\_\+level}\label{classGraspComputation_ae79cf636d04cc911176e25edc86b5609}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This class computes the grasping pose for grasping and object once the superquadric modeling the object is provided. 
+
+The solution is given by solving an optimization problem with the Ipopt software package. 
+
+Definition at line 32 of file grasp\+Computation.\+h.
+
+
+
+\subsection{Member Function Documentation}
+\index{Grasp\+Computation@{Grasp\+Computation}!compute\+Pose@{compute\+Pose}}
+\index{compute\+Pose@{compute\+Pose}!Grasp\+Computation@{Grasp\+Computation}}
+\subsubsection[{\texorpdfstring{compute\+Pose(yarp\+::sig\+::\+Vector \&hand, const std\+::string \&left\+\_\+or\+\_\+right)}{computePose(yarp::sig::Vector &hand, const std::string &left_or_right)}}]{\setlength{\rightskip}{0pt plus 5cm}bool Grasp\+Computation\+::compute\+Pose (
+\begin{DoxyParamCaption}
+\item[{yarp\+::sig\+::\+Vector \&}]{hand, }
+\item[{const std\+::string \&}]{left\+\_\+or\+\_\+right}
+\end{DoxyParamCaption}
+)}\label{classGraspComputation_a28e28e973bd9af1d96bfa7548dc1c029}
+
+
+Compute a given pose for the selected hand. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em hand} & is the hand ellipsoid \\
+\hline
+{\em left\+\_\+or\+\_\+right} & if the string of the hand\+: right, left or both \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true/false on success/failure 
+\end{DoxyReturn}
+
+
+Definition at line 449 of file grasp\+Computation.\+cpp.
+
+
+
+References grasping\+\_\+\+N\+L\+P\+::init(), and grasping\+\_\+\+N\+L\+P\+::plane.
+
+
+\begin{DoxyCode}
+450 \{
+451     stringstream ss;
+452     ss << count\_file;
+453     \textcolor{keywordtype}{string} count\_file\_string=ss.str();
+454 
+455     \textcolor{keywordtype}{string} context=this->rf->getHomeContextPath().c\_str();
+456     Ipopt::SmartPtr<Ipopt::IpoptApplication> app=\textcolor{keyword}{new} Ipopt::IpoptApplication;
+457     app->Options()->SetNumericValue(\textcolor{stringliteral}{"tol"},tol);
+458     app->Options()->SetNumericValue(\textcolor{stringliteral}{"constr\_viol\_tol"},constr\_viol\_tol);
+459     app->Options()->SetIntegerValue(\textcolor{stringliteral}{"acceptable\_iter"},acceptable\_iter);
+460     app->Options()->SetStringValue(\textcolor{stringliteral}{"mu\_strategy"},mu\_strategy);
+461     app->Options()->SetIntegerValue(\textcolor{stringliteral}{"max\_iter"},max\_iter);
+462     app->Options()->SetStringValue(\textcolor{stringliteral}{"nlp\_scaling\_method"},nlp\_scaling\_method);
+463     app->Options()->SetStringValue(\textcolor{stringliteral}{"hessian\_approximation"},\textcolor{stringliteral}{"limited-memory"});
+464     app->Options()->SetStringValue(\textcolor{stringliteral}{"derivative\_test"},\textcolor{stringliteral}{"first-order"});
+465     app->Options()->SetStringValue(\textcolor{stringliteral}{"derivative\_test\_print\_all"},\textcolor{stringliteral}{"yes"});    
+466     app->Options()->SetIntegerValue(\textcolor{stringliteral}{"print\_level"},print\_level);
+467 
+468     \textcolor{keywordflow}{if} (print\_level > 0)
+469         app->Options()->SetStringValue(\textcolor{stringliteral}{"output\_file"}, context+\textcolor{stringliteral}{"/ipopt\_"}+l\_o\_r+\textcolor{stringliteral}{"\_"}+count\_file\_string+\textcolor{stringliteral}{".out"})
+      ;
+470 
+471     app->Initialize();
+472 
+473     Ipopt::SmartPtr<grasping\_NLP>  grasp\_nlp= \textcolor{keyword}{new} grasping_NLP;
+474     grasp\_nlp->init(\textcolor{keywordtype}{object}, which\_hand, n\_pointshand, l\_o\_r);
+475     grasp\_nlp->configure(this->rf,l\_o\_r, displacement, plane);
+476 
+477     Ipopt::ApplicationReturnStatus status=app->OptimizeTNLP(GetRawPtr(grasp\_nlp));
+478 
+479     \textcolor{keywordflow}{if}(status==Ipopt::Solve\_Succeeded)
+480     \{
+481         \textcolor{keywordflow}{if} (l\_o\_r==\textcolor{stringliteral}{"right"})
+482         \{
+483             solR=grasp\_nlp->get\_result();
+484             final\_value\_R=grasp\_nlp->get\_final\_F();
+485             poseR=grasp\_nlp->robot\_pose;
+486             which\_hand=grasp\_nlp->get\_hand();
+487 
+488             yInfo()<<\textcolor{stringliteral}{"[GraspComputation]: Solution (hand pose) for "}<<l\_o\_r<<\textcolor{stringliteral}{" hand is: "}<<poseR.toString(3
+      ,3).c\_str();
+489             yInfo()<<\textcolor{stringliteral}{"[GraspComputation]: Stretched hand is: "}<<which\_hand.toString(3,3).c\_str();
+490 
+491             Matrix H=euler2dcm(poseR.subVector(3,5));
+492             cos\_zr=abs(H(2,2));
+493 
+494             yInfo()<<\textcolor{stringliteral}{"[GraspComputation]: Inner product between z\_hand and z\_root"}<<abs(H(2,2));
+495 
+496             yInfo()<<\textcolor{stringliteral}{"[GraspComputation]: Final cost function value"}<<final\_value\_R;
+497         \}
+498         \textcolor{keywordflow}{else}
+499         \{
+500             solL=grasp\_nlp->get\_result();
+501             final\_value\_L=grasp\_nlp->get\_final\_F();
+502             poseL=grasp\_nlp->robot\_pose;
+503             which\_hand=grasp\_nlp->get\_hand();
+504             yInfo()<<\textcolor{stringliteral}{"[GraspComputation]: Solution (hand pose) for "}<<l\_o\_r<<\textcolor{stringliteral}{" hand is: "}<<poseL.toString(3
+      ,3).c\_str();
+505 
+506             \textcolor{comment}{/****************************/}
+507             Matrix H=euler2dcm(poseL.subVector(3,5));
+508             cos\_zl=abs(H(2,2));
+509 
+510             yInfo()<<\textcolor{stringliteral}{"[GraspComputation]: Inner product between z\_hand and z\_root"}<<abs(H(2,2));
+511 
+512             yInfo()<<\textcolor{stringliteral}{"[GraspComputation]: Final cost function value"}<<final\_value\_L;
+513         \}
+514 
+515         \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+516     \}
+517     \textcolor{keywordflow}{else}
+518     \{
+519         yError()<<\textcolor{stringliteral}{"[GraspComputation]: Problem for "}<<l\_o\_r<<\textcolor{stringliteral}{" not solved!"};
+520         \textcolor{keywordflow}{if} (l\_o\_r==\textcolor{stringliteral}{"right"})
+521         \{
+522             solR.resize(6,0.0);
+523             poseR.resize(6,0.0);
+524             quality\_right=0.0;
+525         \}
+526 
+527         \textcolor{keywordflow}{if} (l\_o\_r==\textcolor{stringliteral}{"left"})
+528         \{
+529             solL.resize(6,0.0);
+530             poseL.resize(6,0.0);
+531             quality\_left=0.0;
+532         \}
+533         
+534         
+535         \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+536     \}
+537 \}
+\end{DoxyCode}
+\index{Grasp\+Computation@{Grasp\+Computation}!compute\+Trajectory@{compute\+Trajectory}}
+\index{compute\+Trajectory@{compute\+Trajectory}!Grasp\+Computation@{Grasp\+Computation}}
+\subsubsection[{\texorpdfstring{compute\+Trajectory(const std\+::string \&chosen\+\_\+hand, const std\+::string \&direction)}{computeTrajectory(const std::string &chosen_hand, const std::string &direction)}}]{\setlength{\rightskip}{0pt plus 5cm}bool Grasp\+Computation\+::compute\+Trajectory (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{chosen\+\_\+hand, }
+\item[{const std\+::string \&}]{direction}
+\end{DoxyParamCaption}
+)}\label{classGraspComputation_ab68ef4347c7efa9540ab68ff5abf0254}
+
+
+Compute the trajectory for the selected hand. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em chosen\+\_\+hand} & is the hand selected for moving  is an option for building the trajectory. It can be \char`\"{}z\char`\"{} or \char`\"{}xz\char`\"{}, according to which direction is used for shifting the trajectory waypoints. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 540 of file grasp\+Computation.\+cpp.
+
+
+\begin{DoxyCode}
+541 \{
+542     Vector pose(6,0.0);
+543 
+544     \textcolor{keywordflow}{if} (chosen\_hand==\textcolor{stringliteral}{"right"})
+545     \{
+546         pose=poseR;
+547     \}
+548     \textcolor{keywordflow}{else}
+549         pose=poseL;
+550 
+551     Vector pose1(6,0.0);
+552     Vector euler(3,0.0);
+553     euler[0]=pose[3];
+554     euler[1]=pose[4];
+555     euler[2]=pose[5];
+556     Matrix H(4,4);
+557     H=euler2dcm(euler);
+558     euler[0]=pose[0];
+559     euler[1]=pose[1];
+560     euler[2]=pose[2];
+561     H.setSubcol(euler,0,3);
+562 
+563     pose1=pose;
+564 
+565     \textcolor{keywordflow}{if} (direction==\textcolor{stringliteral}{"z"})
+566     \{
+567         \textcolor{keywordflow}{if} (chosen\_hand==\textcolor{stringliteral}{"right"})
+568         \{
+569             pose1.setSubvector(0,pose.subVector(0,2)-distance*(H.getCol(2).subVector(0,2)));
+570         \}
+571         \textcolor{keywordflow}{else}
+572         \{
+573             pose1.setSubvector(0,pose.subVector(0,2)+distance*(H.getCol(2).subVector(0,2)));
+574         \}
+575     \}
+576     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (direction==\textcolor{stringliteral}{"xz"})
+577     \{
+578         \textcolor{keywordflow}{if} (chosen\_hand==\textcolor{stringliteral}{"right"})
+579         \{
+580             pose1.setSubvector(0,pose.subVector(0,2)-distance1*(H.getCol(2).subVector(0,2)));
+581             pose1.setSubvector(0,pose1.subVector(0,2)-distance*(H.getCol(0).subVector(0,2)));
+582         \}
+583         \textcolor{keywordflow}{else}
+584         \{
+585             pose1.setSubvector(0,pose.subVector(0,2)+distance1*(H.getCol(2).subVector(0,2)));
+586             pose1.setSubvector(0,pose1.subVector(0,2)-distance*(H.getCol(0).subVector(0,2)));
+587         \}
+588     \}
+589 
+590     \textcolor{keywordflow}{if} (chosen\_hand==\textcolor{stringliteral}{"right"})
+591     \{
+592         trajectory\_right.clear();
+593 
+594         pose.setSubvector(0,pose.subVector(0,2));
+595         trajectory\_right.push\_back(pose1);
+596         trajectory\_right.push\_back(pose);
+597     \}
+598     \textcolor{keywordflow}{else}
+599     \{
+600         trajectory\_left.clear();
+601 
+602         pose.setSubvector(0,pose.subVector(0,2));
+603         trajectory\_left.push\_back(pose1);
+604         trajectory\_left.push\_back(pose);
+605     \}
+606 
+607     \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+608 \}
+\end{DoxyCode}
+\index{Grasp\+Computation@{Grasp\+Computation}!fill\+Property@{fill\+Property}}
+\index{fill\+Property@{fill\+Property}!Grasp\+Computation@{Grasp\+Computation}}
+\subsubsection[{\texorpdfstring{fill\+Property(const std\+::string \&hand)}{fillProperty(const std::string &hand)}}]{\setlength{\rightskip}{0pt plus 5cm}Property Grasp\+Computation\+::fill\+Property (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{hand}
+\end{DoxyParamCaption}
+)}\label{classGraspComputation_a82ff5a0626b48c45d2fc223ecd16d581}
+
+
+Properly fill a property with the computed solution. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em hand} & is the hand string \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the Property with the information inside 
+\end{DoxyReturn}
+
+
+Definition at line 627 of file grasp\+Computation.\+cpp.
+
+
+\begin{DoxyCode}
+628 \{
+629     Property poses;
+630     Bottle bottle;
+631 
+632     \textcolor{keywordflow}{if} ((l\_o\_r==\textcolor{stringliteral}{"right"}) || (l\_o\_r==\textcolor{stringliteral}{"both"}))
+633     \{
+634         Bottle &bright2=bottle.addList();
+635         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{size\_t} i=0; i<poseR.size(); i++)
+636         \{
+637             bright2.addDouble(poseR[i]);
+638         \}
+639         poses.put(\textcolor{stringliteral}{"pose\_right"}, bottle.get(0));
+640 
+641         Bottle &bright1=bottle.addList();
+642         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{size\_t} i=0; i<solR.size(); i++)
+643         \{
+644             bright1.addDouble(solR[i]);
+645         \}
+646         poses.put(\textcolor{stringliteral}{"solution\_right"}, bottle.get(1));
+647 
+648         Bottle &bright3=bottle.addList();
+649         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{size\_t} i=0; i<trajectory\_right.size(); i++)
+650         \{
+651             Bottle &bb=bright3.addList();
+652             \textcolor{keywordflow}{for} (\textcolor{keywordtype}{size\_t} j=0; j<trajectory\_right[i].size();j++)
+653                 bb.addDouble(trajectory\_right[i][j]);
+654         \}
+655         poses.put(\textcolor{stringliteral}{"trajectory\_right"}, bottle.get(2));
+656     \}
+657 
+658     \textcolor{keywordflow}{if} (l\_o\_r==\textcolor{stringliteral}{"both"})
+659     \{
+660         Bottle &bleft2=bottle.addList();
+661         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{size\_t} i=0; i<poseL.size(); i++)
+662         \{
+663             bleft2.addDouble(poseL[i]);
+664         \}
+665         poses.put(\textcolor{stringliteral}{"pose\_left"}, bottle.get(3));
+666 
+667         Bottle &bleft1=bottle.addList();
+668         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{size\_t} i=0; i<solL.size(); i++)
+669         \{
+670             bleft1.addDouble(solL[i]);
+671         \}
+672         poses.put(\textcolor{stringliteral}{"solution\_left"}, bottle.get(4));
+673 
+674         Bottle &bright3=bottle.addList();
+675         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{size\_t} i=0; i<trajectory\_left.size(); i++)
+676         \{
+677             Bottle &bb=bright3.addList();
+678             \textcolor{keywordflow}{for} (\textcolor{keywordtype}{size\_t} j=0; j<trajectory\_left[i].size();j++)
+679                 bb.addDouble(trajectory\_left[i][j]);
+680         \}
+681         poses.put(\textcolor{stringliteral}{"trajectory\_left"}, bottle.get(5));
+682     \}
+683     \textcolor{keywordflow}{if} (l\_o\_r==\textcolor{stringliteral}{"left"})
+684     \{
+685         Bottle &bleft2=bottle.addList();
+686         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{size\_t} i=0; i<poseL.size(); i++)
+687         \{
+688             bleft2.addDouble(poseL[i]);
+689         \}
+690         poses.put(\textcolor{stringliteral}{"pose\_left"}, bottle.get(0));
+691 
+692         Bottle &bleft1=bottle.addList();
+693         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{size\_t} i=0; i<solL.size(); i++)
+694         \{
+695             bleft1.addDouble(solL[i]);
+696         \}
+697         poses.put(\textcolor{stringliteral}{"solution\_left"}, bottle.get(1));
+698 
+699         Bottle &bright3=bottle.addList();
+700         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{size\_t} i=0; i<trajectory\_left.size(); i++)
+701         \{
+702             Bottle &bb=bright3.addList();
+703             \textcolor{keywordflow}{for} (\textcolor{keywordtype}{size\_t} j=0; j<trajectory\_left[i].size();j++)
+704                 bb.addDouble(trajectory\_left[i][j]);
+705         \}
+706         poses.put(\textcolor{stringliteral}{"trajectory\_left"}, bottle.get(2));
+707     \}
+708 
+709     \textcolor{keywordflow}{return} poses;
+710 \}
+\end{DoxyCode}
+\index{Grasp\+Computation@{Grasp\+Computation}!get\+Ipopt\+Par@{get\+Ipopt\+Par}}
+\index{get\+Ipopt\+Par@{get\+Ipopt\+Par}!Grasp\+Computation@{Grasp\+Computation}}
+\subsubsection[{\texorpdfstring{get\+Ipopt\+Par()}{getIpoptPar()}}]{\setlength{\rightskip}{0pt plus 5cm}Property Grasp\+Computation\+::get\+Ipopt\+Par (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classGraspComputation_afbad1962376bdf24b9376cf2c82e0e49}
+
+
+Get parameters used for computing the solution with ipopt. 
+
+\begin{DoxyReturn}{Returns}
+a Property with all the options for ipopt 
+\end{DoxyReturn}
+
+
+Definition at line 194 of file grasp\+Computation.\+cpp.
+
+
+\begin{DoxyCode}
+195 \{
+196     LockGuard lg(mutex);
+197 
+198     Property advOptions;
+199     advOptions.put(\textcolor{stringliteral}{"max\_cpu\_time"},max\_cpu\_time);
+200     advOptions.put(\textcolor{stringliteral}{"tol"},tol);
+201     advOptions.put(\textcolor{stringliteral}{"max\_iter"},max\_iter);
+202     advOptions.put(\textcolor{stringliteral}{"acceptable\_iter"},acceptable\_iter);
+203     advOptions.put(\textcolor{stringliteral}{"IPOPT\_mu\_strategy"},mu\_strategy);
+204     advOptions.put(\textcolor{stringliteral}{"IPOPT\_nlp\_scaling\_method"},nlp\_scaling\_method);
+205     advOptions.put(\textcolor{stringliteral}{"IPOPT\_print\_level"}, print\_level);
+206     \textcolor{keywordflow}{return} advOptions;
+207 \}
+\end{DoxyCode}
+\index{Grasp\+Computation@{Grasp\+Computation}!get\+Pose\+Par@{get\+Pose\+Par}}
+\index{get\+Pose\+Par@{get\+Pose\+Par}!Grasp\+Computation@{Grasp\+Computation}}
+\subsubsection[{\texorpdfstring{get\+Pose\+Par()}{getPosePar()}}]{\setlength{\rightskip}{0pt plus 5cm}Property Grasp\+Computation\+::get\+Pose\+Par (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classGraspComputation_a55cdd807a70b178acc14e1a923ea2feb}
+
+
+Get parameters for correctly compute the grasping pose. 
+
+\begin{DoxyReturn}{Returns}
+a Property with all the options for pose computation 
+\end{DoxyReturn}
+
+
+Definition at line 286 of file grasp\+Computation.\+cpp.
+
+
+
+References grasping\+\_\+\+N\+L\+P\+::plane.
+
+
+\begin{DoxyCode}
+287 \{
+288     LockGuard lg(mutex);
+289 
+290     Property advOptions;
+291     advOptions.put(\textcolor{stringliteral}{"n\_pointshand"},n\_pointshand);
+292     Bottle planed;
+293     Bottle &pd=planed.addList();
+294     pd.addDouble(displacement[0]); pd.addDouble(displacement[1]);
+295     pd.addDouble(displacement[2]);
+296     advOptions.put(\textcolor{stringliteral}{"hand\_displacement"},planed.get(0));
+297 
+298     Bottle planeb;
+299     Bottle &p2=planeb.addList();
+300     p2.addDouble(plane[0]); p2.addDouble(plane[1]);
+301     p2.addDouble(plane[2]); p2.addDouble(plane[3]);
+302     advOptions.put(\textcolor{stringliteral}{"plane"}, planeb.get(0));
+303 
+304     \textcolor{keywordflow}{return} advOptions;
+305 \}
+\end{DoxyCode}
+\index{Grasp\+Computation@{Grasp\+Computation}!get\+Solution@{get\+Solution}}
+\index{get\+Solution@{get\+Solution}!Grasp\+Computation@{Grasp\+Computation}}
+\subsubsection[{\texorpdfstring{get\+Solution(const std\+::string \&hand)}{getSolution(const std::string &hand)}}]{\setlength{\rightskip}{0pt plus 5cm}void Grasp\+Computation\+::get\+Solution (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{hand}
+\end{DoxyParamCaption}
+)}\label{classGraspComputation_a49b0efdf7da5147e987cbf05be135e2f}
+
+
+Extract the solution from ipopt interface. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em hand} & is the selected hand \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 619 of file grasp\+Computation.\+cpp.
+
+
+\begin{DoxyCode}
+620 \{
+621     LockGuard lg(mutex);
+622 
+623     complete_sol=fillProperty(hand);
+624 \}
+\end{DoxyCode}
+\index{Grasp\+Computation@{Grasp\+Computation}!get\+Time@{get\+Time}}
+\index{get\+Time@{get\+Time}!Grasp\+Computation@{Grasp\+Computation}}
+\subsubsection[{\texorpdfstring{get\+Time()}{getTime()}}]{\setlength{\rightskip}{0pt plus 5cm}double Grasp\+Computation\+::get\+Time (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classGraspComputation_a75fcb98c9e15f9aac14ea429f625e662}
+
+
+Return computation time for getting the pose. 
+
+\begin{DoxyReturn}{Returns}
+the period value 
+\end{DoxyReturn}
+
+
+Definition at line 611 of file grasp\+Computation.\+cpp.
+
+
+\begin{DoxyCode}
+612 \{
+613     LockGuard lg(mutex);
+614     
+615     \textcolor{keywordflow}{return} t\_grasp;
+616 \}
+\end{DoxyCode}
+\index{Grasp\+Computation@{Grasp\+Computation}!get\+Trajectory\+Par@{get\+Trajectory\+Par}}
+\index{get\+Trajectory\+Par@{get\+Trajectory\+Par}!Grasp\+Computation@{Grasp\+Computation}}
+\subsubsection[{\texorpdfstring{get\+Trajectory\+Par()}{getTrajectoryPar()}}]{\setlength{\rightskip}{0pt plus 5cm}Property Grasp\+Computation\+::get\+Trajectory\+Par (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classGraspComputation_a9ec71cbbd2fe6165ed4b6d866d78d6be}
+
+
+Get parameters used for correctly compute the trajectory for approaching the desired pose. 
+
+\begin{DoxyReturn}{Returns}
+a Property with all the options for pose computation 
+\end{DoxyReturn}
+
+
+Definition at line 376 of file grasp\+Computation.\+cpp.
+
+
+\begin{DoxyCode}
+377 \{
+378     LockGuard lg(mutex);
+379 
+380     Property advOptions;
+381     advOptions.put(\textcolor{stringliteral}{"distance\_on\_x"},distance);
+382     advOptions.put(\textcolor{stringliteral}{"distance\_on\_z"},distance1);
+383     advOptions.put(\textcolor{stringliteral}{"approaching\_direction"},dir);
+384 
+385     \textcolor{keywordflow}{return} advOptions;
+386 \}
+\end{DoxyCode}
+\index{Grasp\+Computation@{Grasp\+Computation}!init@{init}}
+\index{init@{init}!Grasp\+Computation@{Grasp\+Computation}}
+\subsubsection[{\texorpdfstring{init()}{init()}}]{\setlength{\rightskip}{0pt plus 5cm}bool Grasp\+Computation\+::init (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classGraspComputation_ad8ea3d70e50ff4f4dbda6b03bcef77fa}
+
+
+Init function. 
+
+\begin{DoxyReturn}{Returns}
+true/false on success/failure 
+\end{DoxyReturn}
+
+
+Definition at line 389 of file grasp\+Computation.\+cpp.
+
+
+\begin{DoxyCode}
+390 \{
+391     yInfo()<<\textcolor{stringliteral}{"[GraspComputation]: Thread initing ... "};
+392 
+393     setIpoptPar(ipopt\_par,\textcolor{keyword}{true});
+394     setPosePar(pose\_par, \textcolor{keyword}{true});
+395     setTrajectoryPar(trajectory\_par, \textcolor{keyword}{true});
+396 
+397     solR.resize(11,0.0);
+398     solL.resize(11,0.0);
+399     poseR.resize(6,0.0);
+400     poseL.resize(6,0.0);
+401 
+402     go\_on=\textcolor{keyword}{false};
+403 
+404     count\_file=0;
+405 
+406     \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+407 \}
+\end{DoxyCode}
+\index{Grasp\+Computation@{Grasp\+Computation}!set\+Ipopt\+Par@{set\+Ipopt\+Par}}
+\index{set\+Ipopt\+Par@{set\+Ipopt\+Par}!Grasp\+Computation@{Grasp\+Computation}}
+\subsubsection[{\texorpdfstring{set\+Ipopt\+Par(const yarp\+::os\+::\+Property \&new\+Options, bool first\+\_\+time)}{setIpoptPar(const yarp::os::Property &newOptions, bool first_time)}}]{\setlength{\rightskip}{0pt plus 5cm}void Grasp\+Computation\+::set\+Ipopt\+Par (
+\begin{DoxyParamCaption}
+\item[{const yarp\+::os\+::\+Property \&}]{new\+Options, }
+\item[{bool}]{first\+\_\+time}
+\end{DoxyParamCaption}
+)}\label{classGraspComputation_a3ae446a26b1620933e071d3a538d742f}
+
+
+Set parameters for computing the solution with ipopt. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+Options} & is a Property with the new options to be set \\
+\hline
+{\em first\+\_\+time} & takes into account if it is the first the options are set or not \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 32 of file grasp\+Computation.\+cpp.
+
+
+\begin{DoxyCode}
+33 \{
+34     LockGuard lg(mutex);
+35 
+36     \textcolor{keywordtype}{double} maxCpuTime=newOptions.find(\textcolor{stringliteral}{"max\_cpu\_time"}).asDouble();
+37     \textcolor{keywordflow}{if} (newOptions.find(\textcolor{stringliteral}{"max\_cpu\_time"}).isNull() && (first\_time==\textcolor{keyword}{true}))
+38     \{
+39         max\_cpu\_time=5.0;
+40     \}
+41     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (!newOptions.find(\textcolor{stringliteral}{"max\_cpu\_time"}).isNull())
+42     \{
+43         \textcolor{keywordflow}{if} ((maxCpuTime>=0.01) && (maxCpuTime<=10.0))
+44         \{
+45             max\_cpu\_time=maxCpuTime;
+46         \}
+47         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (maxCpuTime<0.01)
+48         \{
+49             max\_cpu\_time=0.01;
+50         \}
+51         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (maxCpuTime>10.0)
+52         \{
+53             max\_cpu\_time=10.0;
+54         \}
+55     \}
+56 
+57     \textcolor{keywordtype}{double} tolValue=newOptions.find(\textcolor{stringliteral}{"tol"}).asDouble();
+58     \textcolor{keywordflow}{if} (newOptions.find(\textcolor{stringliteral}{"tol"}).isNull() && (first\_time==\textcolor{keyword}{true}))
+59     \{
+60         tol=1e-5;
+61     \}
+62     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (!newOptions.find(\textcolor{stringliteral}{"tol"}).isNull())
+63     \{
+64         \textcolor{keywordflow}{if} ((tolValue>1e-8) && (tolValue<=0.01))
+65         \{
+66             tol=tolValue;
+67         \}
+68         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (tolValue<1e-8)
+69         \{
+70             tol=1e-8;
+71         \}
+72         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (tolValue>0.01)
+73         \{
+74             tol=0.01;
+75         \}
+76     \}
+77 
+78     \textcolor{keywordtype}{double} constrTolValue=newOptions.find(\textcolor{stringliteral}{"constr\_viol\_tol"}).asDouble();
+79     \textcolor{keywordflow}{if} (newOptions.find(\textcolor{stringliteral}{"constr\_viol\_tol"}).isNull() && (first\_time==\textcolor{keyword}{true}))
+80     \{
+81         constr\_viol\_tol=1e-5;
+82     \}
+83     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (!newOptions.find(\textcolor{stringliteral}{"constr\_viol\_tol"}).isNull())
+84     \{
+85         \textcolor{keywordflow}{if} ((constrTolValue>1e-8) && (constrTolValue<=0.01))
+86         \{
+87             constr\_viol\_tol=constrTolValue;
+88         \}
+89         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (constrTolValue<1e-8)
+90         \{
+91             constr\_viol\_tol=1e-8;
+92         \}
+93         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (constrTolValue>0.01)
+94         \{
+95             constr\_viol\_tol=0.01;
+96         \}
+97     \}
+98 
+99     \textcolor{keywordtype}{int} accIter=newOptions.find(\textcolor{stringliteral}{"acceptable\_iter"}).asInt();
+100     \textcolor{keywordflow}{if} (newOptions.find(\textcolor{stringliteral}{"acceptable\_iter"}).isNull() && (first\_time==\textcolor{keyword}{true}))
+101     \{
+102         acceptable\_iter=0;
+103     \}
+104     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (!newOptions.find(\textcolor{stringliteral}{"acceptable\_iter"}).isNull())
+105     \{
+106         \textcolor{keywordflow}{if} ((accIter>=0 )&& (accIter<=10))
+107         \{
+108              acceptable\_iter=accIter;
+109         \}
+110         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (accIter<0 )
+111         \{
+112             acceptable\_iter=0;
+113         \}
+114         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (accIter>10)
+115         \{
+116             acceptable\_iter=10;
+117         \}
+118     \}
+119 
+120     \textcolor{keywordtype}{int} maxIter=newOptions.find(\textcolor{stringliteral}{"max\_iter"}).asInt();
+121     \textcolor{keywordflow}{if} (newOptions.find(\textcolor{stringliteral}{"max\_iter"}).isNull() && (first\_time==\textcolor{keyword}{true}))
+122     \{
+123         max\_iter=100;
+124     \}
+125     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (!newOptions.find(\textcolor{stringliteral}{"max\_iter"}).isNull())
+126     \{
+127         \textcolor{keywordflow}{if} ((maxIter>1))
+128         \{
+129             max\_iter=maxIter;
+130         \}
+131         \textcolor{keywordflow}{else}
+132         \{
+133             max\_iter=100;
+134         \}
+135     \}
+136 
+137     \textcolor{keywordtype}{string} mu\_str=newOptions.find(\textcolor{stringliteral}{"mu\_strategy"}).asString();
+138     \textcolor{keywordflow}{if} (newOptions.find(\textcolor{stringliteral}{"mu\_strategy"}).isNull() && (first\_time==\textcolor{keyword}{true}))
+139     \{
+140         mu\_strategy=\textcolor{stringliteral}{"monotone"};
+141     \}
+142     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (!newOptions.find(\textcolor{stringliteral}{"mu\_strategy"}).isNull())
+143     \{
+144         \textcolor{keywordflow}{if} ((mu\_str==\textcolor{stringliteral}{"adaptive"}) || (mu\_str==\textcolor{stringliteral}{"monotone"}))
+145         \{
+146             mu\_strategy=mu\_str;
+147         \}
+148         \textcolor{keywordflow}{else}
+149         \{
+150             mu\_strategy=\textcolor{stringliteral}{"monotone"};
+151         \}
+152     \}
+153 
+154     \textcolor{keywordtype}{string} nlp=newOptions.find(\textcolor{stringliteral}{"nlp\_scaling\_method"}).asString();
+155     \textcolor{keywordflow}{if} (newOptions.find(\textcolor{stringliteral}{"nlp\_scaling\_method"}).isNull() && (first\_time==\textcolor{keyword}{true}))
+156     \{
+157         nlp\_scaling\_method=\textcolor{stringliteral}{"gradient-based"};
+158     \}
+159     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (!newOptions.find(\textcolor{stringliteral}{"nlp\_scaling\_method"}).isNull())
+160     \{
+161         \textcolor{keywordflow}{if} ((nlp==\textcolor{stringliteral}{"none"}) || (nlp==\textcolor{stringliteral}{"gradient-based"}))
+162         \{
+163             nlp\_scaling\_method=nlp;
+164         \}
+165         \textcolor{keywordflow}{else}
+166         \{
+167             nlp\_scaling\_method=\textcolor{stringliteral}{"gradient-based"};
+168         \}
+169     \}
+170 
+171     \textcolor{keywordtype}{int} pl=newOptions.find(\textcolor{stringliteral}{"print\_level"}).asInt();
+172     \textcolor{keywordflow}{if} (newOptions.find(\textcolor{stringliteral}{"print\_level"}).isNull() && (first\_time==\textcolor{keyword}{true}))
+173     \{
+174         print\_level=0;
+175     \}
+176     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (!newOptions.find(\textcolor{stringliteral}{"print\_level"}).isNull())
+177     \{
+178         \textcolor{keywordflow}{if} ((pl>=0 )&& (pl<=10))
+179         \{
+180              print\_level=pl;
+181         \}
+182         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (pl<0 )
+183         \{
+184             pl=0;
+185         \}
+186         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (pl>10)
+187         \{
+188             print\_level=10;
+189         \}
+190     \}
+191 \}
+\end{DoxyCode}
+\index{Grasp\+Computation@{Grasp\+Computation}!set\+Par@{set\+Par}}
+\index{set\+Par@{set\+Par}!Grasp\+Computation@{Grasp\+Computation}}
+\subsubsection[{\texorpdfstring{set\+Par(const std\+::string \&tag, const std\+::string \&value)}{setPar(const std::string &tag, const std::string &value)}}]{\setlength{\rightskip}{0pt plus 5cm}void Grasp\+Computation\+::set\+Par (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{tag, }
+\item[{const std\+::string \&}]{value}
+\end{DoxyParamCaption}
+)}\label{classGraspComputation_a5a28918e89faff29fce361c7b5efb58f}
+
+
+Set a a parameter equal to a value. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em tag} & is the name of the parameter \\
+\hline
+{\em value} & is the new value of parameter \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 713 of file grasp\+Computation.\+cpp.
+
+
+\begin{DoxyCode}
+714 \{
+715     \textcolor{comment}{//LockGuard lg(mutex);}
+716     \textcolor{keywordflow}{if} (par\_name==\textcolor{stringliteral}{"left\_or\_right"})
+717         left\_right=value;
+718 \}
+\end{DoxyCode}
+\index{Grasp\+Computation@{Grasp\+Computation}!set\+Pose\+Par@{set\+Pose\+Par}}
+\index{set\+Pose\+Par@{set\+Pose\+Par}!Grasp\+Computation@{Grasp\+Computation}}
+\subsubsection[{\texorpdfstring{set\+Pose\+Par(const yarp\+::os\+::\+Property \&new\+Options, bool first\+\_\+time)}{setPosePar(const yarp::os::Property &newOptions, bool first_time)}}]{\setlength{\rightskip}{0pt plus 5cm}void Grasp\+Computation\+::set\+Pose\+Par (
+\begin{DoxyParamCaption}
+\item[{const yarp\+::os\+::\+Property \&}]{new\+Options, }
+\item[{bool}]{first\+\_\+time}
+\end{DoxyParamCaption}
+)}\label{classGraspComputation_a76018ae7258adff6b2efa029fdf6f5dc}
+
+
+Set parameters for correctly compute the grasping pose. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+Options} & is a Property with the new options to be set \\
+\hline
+{\em first\+\_\+time} & takes into account if it is the first the options are set or not \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 210 of file grasp\+Computation.\+cpp.
+
+
+
+References grasping\+\_\+\+N\+L\+P\+::plane.
+
+
+
+Referenced by Grasp\+Execution\+::configure().
+
+
+\begin{DoxyCode}
+211 \{
+212     LockGuard lg(mutex);
+213     \textcolor{keywordflow}{if} (first\_time)
+214     \{
+215         displacement.resize(3,0.0);
+216         plane.resize(4,0.0);
+217     \}
+218 
+219     \textcolor{keywordtype}{int} points=newOptions.find(\textcolor{stringliteral}{"n\_pointshand"}).asInt();
+220 
+221     \textcolor{keywordflow}{if} (newOptions.find(\textcolor{stringliteral}{"n\_pointshand"}).isNull() && (first\_time==\textcolor{keyword}{true}))
+222     \{
+223         n\_pointshand=46;
+224     \}
+225     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (!newOptions.find(\textcolor{stringliteral}{"n\_pointshand"}).isNull())
+226     \{
+227         \textcolor{keywordflow}{if} ((points>=4) && (points<=100))
+228         \{
+229             n\_pointshand=points;
+230         \}
+231         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (points<4)
+232         \{
+233             n\_pointshand=4;
+234         \}
+235         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (points>100)
+236         \{
+237             n\_pointshand=100;
+238         \}
+239     \}
+240 
+241     Bottle *disp=newOptions.find(\textcolor{stringliteral}{"hand\_displacement"}).asList();
+242     \textcolor{keywordflow}{if} (newOptions.find(\textcolor{stringliteral}{"hand\_displacement"}).isNull() && (first\_time==\textcolor{keyword}{true}))
+243     \{
+244         displacement[0]=0.05;
+245         displacement[1]=0.0;
+246         displacement[2]=0.0;
+247     \}
+248     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (!newOptions.find(\textcolor{stringliteral}{"hand\_displacement"}).isNull())
+249     \{
+250         Vector tmp(3,0.0);
+251         tmp[0]=disp->get(0).asDouble();
+252         tmp[1]=disp->get(1).asDouble();
+253         tmp[2]=disp->get(2).asDouble();
+254 
+255         displacement=tmp;
+256 
+257     \}
+258 
+259     Bottle *pl=newOptions.find(\textcolor{stringliteral}{"plane"}).asList();
+260 
+261     yDebug()<<\textcolor{stringliteral}{"PLANE "}<<pl->toString();
+262 
+263     \textcolor{keywordflow}{if} (newOptions.find(\textcolor{stringliteral}{"plane"}).isNull() && (first\_time==\textcolor{keyword}{true}))
+264     \{
+265         plane[0]=0.0; plane[1]=0.0; plane[2]=1.0; plane[3]=0.11;
+266     \}
+267     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (!newOptions.find(\textcolor{stringliteral}{"plane"}).isNull())
+268     \{
+269         Vector tmp(4,0.0);
+270         tmp[0]=pl->get(0).asDouble();
+271         tmp[1]=pl->get(1).asDouble();
+272         tmp[2]=pl->get(2).asDouble();
+273         tmp[3]=pl->get(3).asDouble();
+274         \textcolor{keywordflow}{if} (norm(tmp)>0.0)
+275         \{
+276             plane=tmp;
+277         \}
+278         \textcolor{keywordflow}{else}
+279         \{
+280             plane[0]=0.0; plane[1]=0.0; plane[2]=1.0; plane[3]=0.11;
+281         \}
+282     \}
+283 \}
+\end{DoxyCode}
+\index{Grasp\+Computation@{Grasp\+Computation}!set\+Trajectory\+Par@{set\+Trajectory\+Par}}
+\index{set\+Trajectory\+Par@{set\+Trajectory\+Par}!Grasp\+Computation@{Grasp\+Computation}}
+\subsubsection[{\texorpdfstring{set\+Trajectory\+Par(const yarp\+::os\+::\+Property \&new\+Options, bool first\+\_\+time)}{setTrajectoryPar(const yarp::os::Property &newOptions, bool first_time)}}]{\setlength{\rightskip}{0pt plus 5cm}void Grasp\+Computation\+::set\+Trajectory\+Par (
+\begin{DoxyParamCaption}
+\item[{const yarp\+::os\+::\+Property \&}]{new\+Options, }
+\item[{bool}]{first\+\_\+time}
+\end{DoxyParamCaption}
+)}\label{classGraspComputation_a119b778fee99e973e0e9938ba90398a7}
+
+
+Set parameters for correctly compute the trajectory for approaching the desired pose. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+Options} & is a Property with the new options to be set \\
+\hline
+{\em first\+\_\+time} & takes into account if it is the first the options are set or not \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 308 of file grasp\+Computation.\+cpp.
+
+
+\begin{DoxyCode}
+309 \{
+310     LockGuard lg(mutex);
+311 
+312     \textcolor{keywordtype}{double} dist=newOptions.find(\textcolor{stringliteral}{"distance\_on\_x"}).asDouble();
+313 
+314 
+315     \textcolor{keywordflow}{if} (newOptions.find(\textcolor{stringliteral}{"distance\_on\_x"}).isNull() && (first\_time==\textcolor{keyword}{true}))
+316     \{
+317         distance=0.13;
+318     \}
+319     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (!newOptions.find(\textcolor{stringliteral}{"distance\_on\_x"}).isNull())
+320     \{
+321         \textcolor{keywordflow}{if} ((dist>=0.0) && (dist<=0.3))
+322         \{
+323             distance=dist;
+324         \}
+325         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (dist<0.0)
+326         \{
+327             distance=0.0;
+328         \}
+329         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (dist>0.3)
+330         \{
+331             distance=0.3;
+332         \}
+333     \}
+334 
+335     dist=newOptions.find(\textcolor{stringliteral}{"distance\_on\_z"}).asDouble();
+336 
+337     \textcolor{keywordflow}{if} (newOptions.find(\textcolor{stringliteral}{"distance\_on\_z"}).isNull() && (first\_time==\textcolor{keyword}{true}))
+338     \{
+339         distance1=0.05;
+340     \}
+341     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (!newOptions.find(\textcolor{stringliteral}{"distance\_on\_z"}).isNull())
+342     \{
+343         \textcolor{keywordflow}{if} ((dist>=0.0) && (dist<=0.3))
+344         \{
+345             distance1=dist;
+346         \}
+347         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (dist<0.0)
+348         \{
+349             distance1=0.0;
+350         \}
+351         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (dist>0.3)
+352         \{
+353             distance1=0.3;
+354         \}
+355     \}
+356 
+357     \textcolor{keywordtype}{string} direct=newOptions.find(\textcolor{stringliteral}{"approaching\_direction"}).asString();
+358     \textcolor{keywordflow}{if} (newOptions.find(\textcolor{stringliteral}{"approaching\_direction"}).isNull() && (first\_time==\textcolor{keyword}{true}))
+359     \{
+360         dir=direct;
+361     \}
+362     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (!newOptions.find(\textcolor{stringliteral}{"approaching\_direction"}).isNull())
+363     \{
+364         \textcolor{keywordflow}{if} (direct==\textcolor{stringliteral}{"z"})
+365         \{
+366             dir=direct;
+367         \}
+368         \textcolor{keywordflow}{else}
+369         \{
+370             dir=\textcolor{stringliteral}{"xz"};
+371         \}
+372     \}
+373 \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/gvezzani/\+Desktop/\+Ph\+D/\+Anno\+\_\+1/super\+Quadratiche/superquadric-\/grasping/include/grasp\+Computation.\+h\item 
+/home/gvezzani/\+Desktop/\+Ph\+D/\+Anno\+\_\+1/super\+Quadratiche/superquadric-\/grasping/src/grasp\+Computation.\+cpp\end{DoxyCompactItemize}
